@@ -1,0 +1,116 @@
+/* miniprogram/pages/index/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+
+.main{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 5rpx;
+}
+.inpv{
+  display: inline-block;
+  justify-content: center;
+  height: 100rpx;
+}
+.inp{
+  border: 3rpx solid #2d8cf0;    
+  margin-top: 5rpx;
+  border-radius: 5%;
+  line-height: 100%;
+  width: 650rpx;
+}
+
+.blo1{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 500rpx;
+}
+
+.blo2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.blo3{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15rpx;
+  color: #2d8cf0;
+}
+
+
+.history{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.history text{
+  color: #2d8cf0;
+}
+
+.history__title{
+  margin-bottom: 20rpx;
+}
+
+.history__clear{
+  color: #333333;
+  position: absolute;
+  right: 100rpx;
+  top: 30rpx;
+}
+
+.history__container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.history_item{
+  background-color: #F2F9FD;
+  margin-right: 30rpx;
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30rpx;
+  padding: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.history_item text{
+  margin-left: 150rpx;
+}
+
+
+.handle-button{
+  width: 40rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  color: #ffffff;
+  background-color: #2d8cf0;
+  font-family: PingFang-SC-Bold;
+  font-size: 24rpx;
+}
+
+.buttons-han-container{
+  width: 180rpx;
+  display: flex;
+  margin-top: 10rpx;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}

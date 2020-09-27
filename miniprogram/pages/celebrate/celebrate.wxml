@@ -1,0 +1,48 @@
+<!--miniprogram/pages/celebrate/celebrate.wxml-->
+<view class="cele-container">
+  <view class="avatar-container" bind:tap="xiangce">
+    <image src="{{avatar}}" class="avatar" />
+    <image src="{{currentIcon}}" class="current-icon current-icon-{{currentPositon}} icon-image" />
+  </view>
+  <view class="icon-list">
+        <image src="{{item}}" class="icon-image" wx:for="{{iconList}}" wx:key="index" bind:tap="chooseIcon" data-image="{{item}}"/>
+  </view>
+  <view class="buttons-pos-container">
+    <view bind:tap="choosePosition" data-position="0" class="position-button">左上方</view>
+    <view bind:tap="choosePosition" data-position="1" class="position-button">右上方</view>
+    <view bind:tap="choosePosition" data-position="2" class="position-button">左下方</view>
+    <view bind:tap="choosePosition" data-position="3" class="position-button">右下方</view>
+  </view>
+  <view class="button-container">
+    <view class="button-container-line">
+      <button open-type="getUserInfo" type="primary" bindgetuserinfo="onGetUserInfo" class="new-button" wx:if="{{!authorized}}">
+        获取微信头像
+      </button>
+      <button open-type="share" type="primary" class="new-button" type="primary" wx:else="{{authorized}}">
+        分享好友
+      </button>
+    </view>
+    <view class="button-container-line">
+      <button bind:tap="saveImage" open-type="{{photo?'':'openSetting'}}" bindopensetting="onSuccessOpenSetting" class="new-button" type="warn">
+        保存图片
+      </button>
+      <button bind:tap="changePattern" class="new-button" type="warn">
+        主题切换：{{patternIndex?'国庆':'中秋'}}
+      </button>
+    </view>
+  </view>
+  <view class="custom-modal-container" wx:if="{{customModal}}">
+    <image src="{{shareImg}}" class="custom-modal-image"></image>
+    <view class="custom-button-container">
+      <button class="custom-button" bind:tap="customModalCancel" data-status="0">下次一定</button>
+      <button class="custom-button concat-customer" open-type="share">推荐好友</button>
+    </view>
+  </view>
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{customModal}}"></view>
+  <!-- <canvas canvas-id="my-canvas" class="my-canvas" /> -->
+  <!-- 隐藏区域 -->
+  <view class='canvasBox'>
+    <canvas canvas-id="myCanvas" class='myCanvas' />
+  </view>
+  <image src="{{backImg}}" class="back" />
+</view>

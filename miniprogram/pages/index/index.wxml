@@ -1,0 +1,57 @@
+<view class="main">
+<view class="blo1">
+<view class="inpv">
+<navigator url="/pages/mine/mine">
+  <text style="color:#2d8cf0;font-size:20rpx">
+This is a general multilingual api, which is used for testing and personal use. If you want to know more information, please contact me...  \n
+</text>
+</navigator>
+<view style="display:block">
+  <input class="inp" placeholder-style="font-size:small;color:#5cadff" type="text" placeholder="input what you search" value="{{searchText}}" mode="wrapped" confirm-type="serach" bindconfirm="doSearch" bindinput="ChangeWord"></input>
+  <view class="history" wx:if='{{historyList.length}}'>
+    <text class="history_title">search history</text>
+    <text class="history_clear" bindtap="clearHistory">clear history</text>
+    <view class="history_container">
+      <view class="history_item" wx:for="{{historyList}}" wx:key='index' data-index="{{index}}" bindtap="hitoryItemSearch">{{item.text}}<text style="color:#2d8cf0">from {{item.from}} to {{item.to}}</text></view>
+    </view>
+  </view>
+  </view>
+  <!-- <view class="buttons-han-container">
+  <button bindtap="doSearch" type="primary" class="handle-button">search</button>
+  <button bindtap="ClearWord" type="primary" class="handle-button">clear</button>
+  </view> -->
+</view>
+</view>
+  <view class="blo3">translate from {{from}} to {{to}}
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;margin-top:10rpx" value="{{choose}}" bindchange="languageChange">
+  <picker-view-column>
+        <view wx:for="{{languages}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{languages}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+      </picker-view-column>
+  </picker-view>
+  </view>
+<view class="blo2" wx:if="{{searchResult.length}}">
+<scroll-view scoll-y="true" style="width:75%">
+<!-- <block wx:for="{{searchResult}}"> -->
+<i-card wx:for="{{searchResult}}" wx:key="index" title="{{item.text}}">
+    <view slot="content" style="color:#2d8cf0;font-size:1rem">{{item.result}}
+    <!-- <view wx:if="{{item.webValue}}">
+      词义短语：
+      <text wx:for="{{item.webvalue}}" wx:for-item="webValue">{{webValue.key}} ；</text>
+    </view> -->
+    <view wx:if="{{item.basic}}">
+      分级：{{item.basic.exam_type[0]}}       
+      <text wx:for="{{item.basic.explains}}" wx:for-item="basicExplain">{{basicExplain}};</text>
+    </view>
+    </view>
+    <view slot="footer">
+    search more ...<i-button data-index="{{index}}" bind:click="handleDelete" type="primary" size="small">delete</i-button></view>
+</i-card>
+<!-- </block> -->
+</scroll-view>
+</view>
+</view>
+
+

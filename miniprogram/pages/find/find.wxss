@@ -1,0 +1,68 @@
+/* .box{
+  display: flex;
+  width: 300rpx;
+  height: 300rpx;
+  background-color: blueviolet;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.item{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: aqua;
+} */
+
+/* .item:nth-child(2){
+  align-self: flex-end;
+} */
+
+/* .box{
+  display: flex;
+  width: 300rpx;
+  height: 300rpx;
+  background-color: blueviolet;
+  flex-wrap: wrap;
+}
+
+.item{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: aqua;
+} */
+
+
+.box{
+  display: flex;
+  width: 100%;
+  height: 1000rpx;
+  flex-direction: column;       /* 横向部署项目元素 */
+}
+
+.header,.footer{
+  flex: 0 1 180rpx;                 /* 不抢夺剩余部分，但同比例缩小，指定固定高度 */
+  background-color: rebeccapurple;
+}
+
+.body{
+  display: flex;
+  flex: 2;              /* 与header，footer共同分去剩余部分 */
+}
+
+.main{
+  flex: 1;              /* 独自占据剩余内容 */
+}
+
+.nav_right,.nav_left{
+  flex: 0 0 200rpx;       /* 两边导航栏不占据剩余部分，设置固定长度 */
+  background-color: red;
+}
+
+.nav_left{
+  order: -1;             /* 左导航栏放到最左边 */
+}
+
+
+
+

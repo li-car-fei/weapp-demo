@@ -1,0 +1,264 @@
+/* miniprogram/pages/celebrate/celebrate.wxss */
+page{
+  background-color: antiquewhite;
+}
+.cele-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.get-button{
+  margin-top: 240rpx;
+  margin-bottom:180rpx;
+  width: 60%;
+}
+
+.avatar-container{
+  width: 300rpx;
+  height: 300rpx;
+  position: relative;
+  border: white;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius:10rpx;
+  overflow: hidden;
+  margin-top: 200rpx;
+  margin-bottom: 40rpx;
+}
+
+.avatar-container-click{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 200rpx;
+  margin-bottom: 40rpx;
+}
+
+.avatar{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 28rpx;
+  overflow: hidden;
+  margin: auto;
+}
+
+.current-icon{
+  position: absolute;
+}
+.current-icon-0{
+  top: 0rpx;
+  left: 0rpx;
+}
+
+.current-icon-1{
+  top: 0rpx;
+  left: 190rpx;
+}
+
+.current-icon-2{
+  top: 190rpx;
+  left: 0rpx;
+}
+
+.current-icon-3{
+  top: 190rpx;
+  left: 190rpx;
+}
+
+
+.icon-list{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: antiquewhite;
+}
+
+.buttons-pos-container{
+  width: 680rpx;
+  display: flex;
+  margin-top: 100rpx;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+
+.position-button{
+  width: 120rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #ffffff;
+  background-color: #f90;
+  font-family: PingFang-SC-Bold;
+  font-size: 26rpx;
+}
+
+.icon-image{
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.s-button{
+  width: 80%;
+  margin-top: 20rpx;
+}
+
+.bottom-button{
+  margin-bottom: 100rpx;
+}
+
+.canvasBox {
+  width: 0rpx;
+  height: 0rpx;
+  overflow: hidden;
+  display: block;
+  position: fixed;
+}
+
+.myCanvas {
+  width: 1200rpx;
+  height: 1200rpx;
+  position: relative;
+  left: 1000rpx;
+}
+
+
+.my-canvas{
+  width: 300rpx;
+  height: 300rpx;
+  background-color: aquamarine;
+  margin-top: 50rpx;
+}
+
+.back{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 99;
+  opacity: 0.7;
+}
+
+.custom-modal-container {
+  width: 550rpx;
+  height: 416rpx;
+  top: 400rpx;
+  left: 100rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  z-index: 100;
+  position: fixed;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-modal-image{
+  width: 550rpx;
+  height: 350rpx;
+  overflow: hidden;
+}
+
+.custom-text{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+	font-family: PingFang-SC-Bold;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+  color: #333333;
+  text-align: center;
+}
+
+.custom-text-container {
+  width: 520rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+
+.custom-text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #373737;
+  letter-spacing: 0;
+}
+
+.button-box {
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.custom-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-button {
+  width: 280rpx;
+  height: 90rpx;
+  font-family: PingFang-SC-Bold;
+  font-size: 30rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 90rpx;
+  border-top: 1rpx solid #dddddd;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0rpx;
+}
+.concat-customer {
+  color: #c21f3a;
+  border-left: 2rpx solid #ebebeb;
+}
+
+button::after{
+  border:none;
+}
+
+.button-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 120rpx;
+}
+
+.button-container-line{
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.new-button{
+  width: 60%;
+}
+
+
+

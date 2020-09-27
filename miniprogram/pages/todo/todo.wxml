@@ -1,0 +1,44 @@
+<top-bar classification='{{classification}}' style='width:100%;' id='topBar' bind:topBarChange='topBarChange'></top-bar>
+
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+		<view class="section">
+			<input placeholder="Input today's todos..." value="{{input}}" bindinput="handleInput" bindconfirm="todoAdd"/>
+		</view>
+		<view class="btn">
+			<button style="background-color:#2d8cf0;" bindtap="todoAdd" class="weui-btn mini-btn" type="primary" size="mini">Add Todo</button>
+		</view>
+  </view>
+</view>
+
+<view class="todos">
+  <view class="weui-cells__title">TodoList</view>
+	<view class="weui-cells weui-cells_after-title">
+		<block wx:if="{{todos.length}}">
+			<checkbox-group bindchange="todoChange">
+				<label class="weui-cell weui-check__label" wx:for="{{todos}}" wx:key="{{item.index}}">
+					<checkbox class="weui-check" value="{{item.index}}" checked="{{item.completed}}"/>
+					<view class="weui-cell__hd weui-check__hd_in-checkbox">
+						<icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.completed}}"></icon>
+						<icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.completed}}"></icon>
+					</view>
+					<view class="weui-cell__bd" wx:if="{{!item.completed}}">{{item.value}}<text style="color:gray;font-size:small;float:right">{{item.time}}</text></view>
+					<view class="weui-cell__bd todo-checked" wx:if="{{item.completed}}">{{item.value}}<text style="color:gray;font-size:small;float:right">{{item.time}}</text></view>
+				</label>
+			</checkbox-group>
+		</block>
+		
+		<block wx:else>
+			<view class="weui-cell">
+				<view class="weui-cell__bd">All the todos have been done!</view>
+			</view>
+		</block>
+	</view>
+</view>
+
+<view class="footer">
+  <text bindtap="handleAll" style="color:#2d8cf0;">{{allCompleted ? 'Completed All' : 'UnCompleted All'}}</text>
+  <text bindtap="clearCompleted" style="color:#2d8cf0;">Clear Completed</text>
+</view>
+

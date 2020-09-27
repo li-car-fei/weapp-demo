@@ -1,0 +1,53 @@
+.view-shadow{
+  box-shadow: 0rpx 3rpx 10rpx rgba(0, 0, 0, 0.16);
+}
+
+.text-l{
+  font-size: 30rpx;
+}
+.topBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40rpx;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.topBar__container{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.topBar__container__classification{
+  position: relative;
+}
+
+.-selected {
+  color: #445E83 !important;
+  font-weight: bold !important;
+}
+
+.-selected::after{
+  content: "";
+  height: 5rpx;
+  width: 70rpx;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -35rpx; 
+  /* 让横线居中 */
+  bottom: 0;
+  background: #4C7DC2;
+}
+
+.topBar__search{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 50rpx;
+}

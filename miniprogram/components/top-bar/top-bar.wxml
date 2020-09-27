@@ -1,0 +1,11 @@
+<view class="topBar view-shadow">
+  <view class='topBar__container'>
+    <view class='topBar__container__classification {{topBarCurrent==index?"-selected":""}}' 
+          wx:for='{{classification}}' 
+          wx:key='index'
+          bindtap="topBarOnTap"
+          data-index="{{index}}">
+      <text class="text-l">{{item}}</text>
+    </view>
+  </view>
+</view>

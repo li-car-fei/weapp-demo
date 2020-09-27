@@ -1,0 +1,9 @@
+<view class="box">
+  <view class="header">header</view>
+  <view class="body">
+    <view class="main">main content</view>
+    <view class="nav_right">right nav</view>
+    <view class="nav_left">left nav</view>
+  </view>
+  <view class="footer">footer</view>
+</view>
