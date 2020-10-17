@@ -1,0 +1,19 @@
+<top-bar classification='{{classification}}' style='width:100%;' id='topBar' bind:topBarChange='topBarChange'></top-bar>
+
+<view>
+<view style="margin-top:8rpx" wx:for="{{catchResults}}">
+  <i-card full="true" title="{{item.title}}" extra="{{item.weather}}">
+    <view slot="content">
+      <view style="padding:10rpx 10rpx;text-aligin:center">
+        <block wx:for="{{item.imageCloudId}}" wx:for-item="cloudId" wx:for-index="image_index">
+          <image src="{{cloudId}}" mode="aspectFill" style="width:33.3333%;height:200rpx" data-index="{{image_index}}" data-images="{{item.imageCloudId}}" bindtap="viewImage"></image>
+        </block>
+	      <view style="margin:6rpx auto;width:85%;color:#2d8cf0;font-size:25rpx;">
+		    <text>{{item.info}}</text>
+	      </view>
+      </view>
+    </view>
+    <view slot="footer">{{item.remark}}</view>
+  </i-card>
+</view>
+</view>

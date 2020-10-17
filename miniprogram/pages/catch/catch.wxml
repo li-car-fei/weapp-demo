@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="bg-fff p-lr30 border-t">
+    <view class="ipt-wrap border-b flex ai-center">
+      <label for="" class="font14">title</label>
+      <input type="text" class="ml40 flex1" placeholder="请输入title" bindinput="gettitleValue" value="{{titleValue}}"></input>
+    </view>
+ 
+    <view class="ipt-wrap border-b">
+      <textarea name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="50" placeholder="write about information"  bindinput="getTextareaValue" value="{{textareaValue}}"></textarea>
+    </view>
+ 
+    <view class="ipt-wrap border-b flex ai-center jc-sb">
+      <view class="flex ai-center">
+        <label for="" class="font14">天气</label>
+        <picker mode="selector" class="ml40 flex1 weather" bindchange="WeatherChange" value="{{weather_index}}" range="{{weather}}">
+          <view class="picker flex1 texthide">
+            {{weather[weather_index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="flex">
+        <text wx:if="{{weatherFlag}}">pick</text>
+        <text wx:else class="iconfont icon-youjiantou color-a5a5a5 ml20">change</text>
+      </view>
+    </view>
+
+    <view class="ipt-wrap border-b">
+      <textarea name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="50" placeholder="可在此处填写备注说明" bindinput="getRemarksValue" value="{{remarksValue}}"></textarea>
+    </view>
+
+    <view class=" bg-fff p30 flex ai-center jc-sb mt20 border-b">
+      <view class="flex ai-center">
+        <label for="" class="font14">设为私密可见</label>
+      </view>
+      <view class="flex">
+        <switch class="switch" bindchange="privateChange" color="#279efd"></switch>
+      </view>
+    </view>
+
+
+    <view class="ipt-wrap border-b flex ai-center">
+      <button bindtap="getImage">choose image</button>
+    </view>
+
+    <view class="ipt-wrap border-b flex ai-center">
+      <view class="grid-item-container">
+          <view wx:for="{{imageCloudId}}" wx:key="index" class="grid-item-child" data-index="{{index}}" bindtap="viewImage">
+              <image src="{{item}}" style="width:200rpx" mode="scaleToFill"></image>
+          </view>
+      </view>
+    </view>
+
+  </view>
+ 
+  <view class="combtn font16 color-fff _w100 bg-btn" bindtap="saveCatch">
+    保存
+  </view>
+</view>

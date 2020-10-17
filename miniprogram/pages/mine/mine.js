@@ -1,7 +1,3 @@
-const app=getApp();
-//const userinfo=app.getinfo();
-//const clock=app.getclock();
-//const request=require('../../Api/request')
 const bmap=require('../../Api/bmap-wx')
 
 Page({
@@ -66,17 +62,6 @@ Page({
       //firstDay: this.data.firstDay
     })
   },
-
-  // getChoose:function(){     //获取之前设置的clock
-  //   if (clock.year && clock.month && clock.day) {
-  //     this.setData({
-  //       choose_date: clock.day,
-  //       choose_month: clock.month,
-  //       choose_year: clock.year,
-  //     })
-  //   }
-  // },
-
   real_check:function(){
     //判定是否为当前日期的年月份
     if ((this.data.year == this.data.real_year) && (this.data.month == this.data.real_month)) {
@@ -183,9 +168,6 @@ Page({
     let choose_date=event.target.dataset.index+1
     let choose_year=this.data.year
     let choose_month=this.data.month
-    /*console.log(choose_year)
-    console.log(choose_month)
-    console.log(choose_date)*/
     this.setData({
       choose:choose,
       choose_year:choose_year,
@@ -207,10 +189,6 @@ Page({
         month:this.data.choose_month,
         day:this.data.choose_date
       };
-      //app.updateclock(obj);
-
-      //ajax设置提醒的日期
-      
     }else{
       wx.showToast({
         title: '请选择设置提醒的日期',
@@ -256,7 +234,6 @@ Page({
     var res = wx.getSystemInfoSync();
     this.setData({
       param: res.windowHeight / 12,
-      //user_img:userinfo.user_img
       user_img:'/static/img/avator.jpeg'
     })
 

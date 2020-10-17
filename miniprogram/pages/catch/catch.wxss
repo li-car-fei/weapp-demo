@@ -1,0 +1,110 @@
+/*  */
+.container {height: 100%; min-height: 100vh; display: flex;flex-direction: column; box-sizing: border-box;
+  background: #f5f5f5;overflow-x:hidden;} 
+.container view,text{font-size: 13px;}
+
+.ipt-wrap{
+  min-height: 100rpx;
+  line-height: 100rpx;
+}
+.ipt-wrap label{
+  min-width: 120rpx;
+}
+.icon-youjiantou{
+  position: relative;
+  top: 1rpx;
+}
+.textarea{
+  height: 100rpx;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+  width:82rpx !important;
+  height:40rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width:80rpx !important;
+  height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 40rpx !important;
+  height: 36rpx !important;
+}
+.ipt-wrap:last-child{
+  border-bottom:none;
+}
+/*swtich样式end*/
+.weather{
+  width: 500rpx;
+  position: absolute;
+  left: 150rpx;
+}
+
+
+
+ /*
+  九宫格容器布局样式
+ */
+ .grid-item-container {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1.5rpx solid #6b95ad;
+}
+
+/*
+  item容器样式
+*/
+.grid-item-child {
+  display:flex;
+  display: -webkit-flex;
+  justify-content:center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  width: 33.33333333%;
+  height: 200rpx;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-right: 1rpx solid #4c669e;
+  border-bottom: 1rpx solid #4c669e;
+}
+
+
+
+
+
+.bg-fff{background: #ffffff;}
+.bg-btn{background: linear-gradient(to right, #66ded0, #229dfe);}
+.flex{display: flex;}
+.jc-sb{justify-content: space-between;}
+.ai-center{align-items: center;}
+.flex1{flex:1;}
+.font14{font-size: 14px;}
+.font16{font-size: 16px;}
+.color-fff{color: #fff;}
+.p-tb30{padding: 30rpx 0;}
+.p-lr30{padding: 0 30rpx;}
+.p30{padding: 30rpx;}
+.ml40{margin-left: 40rpx;}
+._w100{width: 100%;}
+.border-t{border-top:1px solid #e4e4e4;}
+.border-b{border-bottom:1px solid #e4e4e4;}
+.lh10{line-height: 1;}
+.texthide{overflow: hidden;text-overflow: ellipsis;white-space:nowrap;}
+.combtn{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin: 0 auto;
+  border-radius: 5rpx;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

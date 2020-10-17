@@ -5,24 +5,20 @@ const request=require('../request');
 
 // word:翻译的词      from：各种语言      to：翻译成何种语言
 module.exports=async function translate(word,from='auto',to='en'){
-  //const sign=md5.hexMD5(config.appid+word+config.salt+config.secret_key);         // 百度翻译加密
-  const sign=zhmd5.md5(config.appKey+word+config.salt+config.secretKey);
-  if(from=='zh'){
-    word=encodeURI(word);
-    //console.log(word);
-  }
+  //const sign=zhmd5.md5(config.appid+word+config.salt+config.secret_key);         // 百度翻译加密
+  const sign=zhmd5.md5(config.appKey+word+config.salt+config.secretKey);        // 有道翻译
   const data={
     q:word,
     from,
     to,
     //appid:config.appid,               // 百度翻译
-    appKey:config.appKey,
+    appKey:config.appKey,           // 有道翻译
     salt:config.salt,
     sign
   };
 
   //const result=await request(config.url,'GET',data,2,'',true);                // 百度翻译请求
-  const result=await request(config.youHost,'GET',data,2,'',true);
+  const result=await request(config.youHost,'GET',data,2,'',true);        // 有道翻译
   console.log(result);
   return result.data? result.data:'error'
 

@@ -42,3 +42,11 @@
   <text bindtap="clearCompleted" style="color:#2d8cf0;">Clear Completed</text>
 </view>
 
+<view style="padding:20rpx 10rpx;margin:50rpx 0;text-aligin:center">
+	
+	<image src="{{imgSrc}}" mode="aspectFill" style="width:100%"></image>
+	<view style="margin:6rpx auto;width:85%;color:#2d8cf0;font-size:20rpx;">
+		<text>{{oneText}}</text>
+	</view>
+</view>
+

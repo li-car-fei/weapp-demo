@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/celebrate/celebrate",
+    "pages/catchIndex/catchIndex",
+    "pages/catch/catch",
     "pages/todo/todo",
+    "pages/calender/calender",
     "pages/index/index",
     "pages/mine/mine",
     "pages/Identify/Identify",
-    "pages/record/record"
+    "pages/record/record",
+    "pages/catchHistory/catchHistory"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -27,8 +30,8 @@
         "selectedIconPath": "/static/topbar/trophy_selected.png"
       },
       {
-        "pagePath": "pages/celebrate/celebrate",
-        "text": "celebrate",
+        "pagePath": "pages/catchIndex/catchIndex",
+        "text": "catch",
         "iconPath": "/static/topbar/star.png",
         "selectedIconPath": "/static/topbar/star_selected.png"
       },

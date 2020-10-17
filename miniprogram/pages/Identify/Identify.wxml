@@ -29,7 +29,7 @@
   <view class="tips" wx:if="{{ showTips }}">短按拍照，长按选择照片</view>
   <button class="button" hover-class="button-hover" bindtap="handleClick" bindlongpress="handleClick">
     <view class="icon"></view>
-    <text>拍拍</text>
+    <text>拍一拍</text>
   </button>
-  <button style="font-size:28rpx;margin-top:17rpx" class="button" hover-class="button-hover" bindtap="changeModel">模式切换：{{model?'人脸分析':'OCR识别'}}</button>
+  <button style="font-size:28rpx;margin-top:17rpx" class="button" hover-class="button-hover" bindtap="changeModel">模式切换：{{model?'OCR识别':'人脸分析'}}</button>
 </view>

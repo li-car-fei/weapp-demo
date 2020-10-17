@@ -12,15 +12,14 @@
   </view>
   <view class="week">
   <view wx:for="{{weekArr}}" wx:for-index="index" wx:for-item="item" wx:key="key" 
-        style="width:{{param}}px;height:{{param-17}}px;line-height:{{param-17}}px;display:flex;justify-content:center;                   align-items:center;">
+        style="width:{{param}}px;height:{{param-17}}px;line-height:{{param-17}}px;display:flex;justify-content:center;align-items:center;">
         <text>{{item}}</text>
   </view>
   </view>
   <view class="date" style='width: {{ param * 7 }}px;'>
     <block wx:for="{{dateArr}}" wx:for-index="index" wx:for-item="item" wx:key="key">
-      <view style="{{index ==0?'margin-left:'+ param *firstDay +'px;':''}}width:{{param}}px;height:{{param-10}}px;                    line-height:{{param-10}}px;display:flex;justify-content:center;align-items:center; " 
-            class="{{index+1==day?'today':''}} {{index==choose?'choosed':''}}"
-            bindtap="choose">
+      <view style="{{index ==0?'margin-left:'+ param *firstDay +'px;':''}}width:{{param}}px;height:{{param-10}}px;line-height:{{param-10}}px;display:flex;justify-content:center;align-items:center;" class="{{index+1==day?'today':''}} {{index==choose?'choosed':''}}"
+      bindtap="choose">
       <text class="day" data-index="{{index}}">{{item}}</text>
       </view>
     </block>

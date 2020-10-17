@@ -14,16 +14,24 @@ Page({
     allCompleted: true,
     input: '',
     avatar:'../../static/img/avator.jpeg',
-    classification:['Todo','Record']
+    classification:['Todo','Record','Calendar'],
+    imgSrc:'',
+    oneText:''
   },
 
   topBarChange:function(e){
-    if(e.detail.topBarCurrent){
+    if(e.detail.topBarCurrent==1){
       // 查看记录
       wx.navigateTo({
         url: '../../pages/record/record',
       })
-    }
+    };
+    if(e.detail.topBarCurrent==2){
+      // 查看日历记录
+      wx.navigateTo({
+        url: '../../pages/calender/calender',
+      })
+    };
   },
 
   // 保存数据
@@ -43,20 +51,6 @@ Page({
       todos:this.data.todos,
       date:TODAY
     })
-
-    // var todos_history=wx.getStorageSync('todos_history')||[]
-    // const index=todos_history.findIndex(item=>{
-    //   return item.date==TODAY
-    // });
-    // if(index==-1){      // 无今日记录
-    //   todos_history.push({
-    //     date:TODAY,
-    //     todos:this.data.todos
-    //   })
-    // }else{
-    //   todos_history[index].todos=this.data.todos;
-    // };
-    // wx.setStorageSync('todos_history', todos_history)
   },
 
   // 授权通过后获取用户头像
@@ -82,40 +76,8 @@ Page({
   },
 
   onLoad: async function () {
-    // const demo=wx.getStorageSync('todos_history')[0];
-    // TodosCollection.add({
-    //   ...demo
-    // }).then(res=>{
-    //   console.log(res)
-    // })
-
-    // TodosCollection.get({
-    //   date:TODAY
-    // }).then(res=>{
-    //   console.log(res)
-    // })
-
-    // TodosCollection.get({}).then(res=>{
-    //   console.log(res)}
-    // )
-
-    // TodosCollection.update({
-    //   date:TODAY
-    // },{
-    //   //todos:[]
-    //   date:'2020-09-26'
-    // }).then(res=>{
-    //   console.log(res)
-    // })
-
-    // TodosCollection.remove({
-    //   date:TODAY
-    // }).then(res=>{
-    //   console.log(res)
-    // })
-
+    var that=this
     var todos=[]
-    //const todos_history = wx.getStorageSync('todos_history')||[]
     const result=await TodosCollection.get({})
     const todos_history=result.data
     const index=todos_history.findIndex(item=>{
@@ -127,10 +89,25 @@ Page({
     this.setData({
       todos
     });
+
+    wx.cloud.callFunction({
+      name:'fetchones',
+      // data:{},
+      success: res => {
+        console.log(res);
+        that.setData({
+          imgSrc:res.result.img,
+          oneText:res.result.text
+        })
+      },
+      fail: err => {
+        console.log(err)
+      },
+    })
   },
 
   onShow:function(){
-    this.onGetAvator()
+    this.onGetAvator();
   },
 
   handleInput: function(e) {
